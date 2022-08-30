@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:safe_response_toolkit/widget/customPopup.dart';
 
 void main() {
-  runApp(const Home());
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  runApp(const MaterialApp(
+    home: Home(),
+  ));
 }
 
 class Home extends StatefulWidget {
@@ -12,6 +18,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      FlutterNativeSplash.remove();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,7 +40,7 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               const Image(
-                image: AssetImage('assets/srt.webp'),
+                image: AssetImage('assets/srt.png'),
                 fit: BoxFit.cover,
               ),
               const SizedBox(
@@ -56,42 +70,61 @@ class _HomeState extends State<Home> {
                         SizedBox(
                           width: 200.0,
                           height: 50.0,
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
-                              backgroundColor:
-                                  MaterialStateProperty.all<Color>(Colors.blue),
-                            ),
-                            onPressed: () {},
-                            child: const Text(
-                              'Yes',
-                              style: TextStyle(
-                                fontSize: 25.0,
-                              ),
-                            ),
-                          ),
+                          child: custompop(
+                              text: 'Yes',
+                              bgColor: Colors.blue,
+                              height: MediaQuery.of(context).size.height,
+                              width: MediaQuery.of(context).size.width,
+                              list: [
+                                {
+                                  'title': 'EMERGENCY CONTACTS',
+                                  'link': 'null',
+                                  'color': Colors.red
+                                },
+                                {
+                                  'title': 'EMERGENCY HELPLINE',
+                                  'link': 'null',
+                                  'color': Colors.blue
+                                },
+                                {
+                                  'title': 'POLICE',
+                                  'link': 'null',
+                                  'color': Colors.blue
+                                },
+                                {
+                                  'title': 'ORGANIZATIONS',
+                                  'link': 'null',
+                                  'color': Colors.blue
+                                },
+                                {
+                                  'title': 'PERSONALIZED CONTACT',
+                                  'link': 'null',
+                                  'color': Colors.blue
+                                },
+                                {
+                                  'title': 'CANCEL',
+                                  'link': 'null',
+                                  'color': Colors.blue
+                                },
+                              ]),
                         ),
                         const SizedBox(height: 10.0),
                         SizedBox(
                           width: 200.0,
                           height: 50.0,
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
-                              backgroundColor:
-                                  MaterialStateProperty.all<Color>(Colors.red),
-                            ),
-                            onPressed: () {},
-                            child: const Text(
-                              'No',
-                              style: TextStyle(
-                                fontSize: 25.0,
+                          child: Container(
+                            color: Colors.red,
+                            child: const Center(
+                              child: Text(
+                                'No',
+                                style: TextStyle(
+                                  fontSize: 25.0,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
