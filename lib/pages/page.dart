@@ -41,12 +41,22 @@ class _PageListState extends State<PageList> {
               ),
             ],
           ),
-          ButtonTheme(
-            minWidth: MediaQuery.of(context).size.width * 0.9,
-            height: 70.0,
-            child: RaisedButton(
-                color: const Color.fromRGBO(248, 187, 158, 1),
-                onPressed: () {},
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/response');
+                },
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(248, 187, 158, 1)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: const BorderSide(
+                                color: Color.fromRGBO(248, 187, 158, 1))))),
                 child: const Text(
                   'Immediate Response',
                   style: TextStyle(
@@ -56,12 +66,20 @@ class _PageListState extends State<PageList> {
                 )),
           ),
           const SizedBox(height: 25.0),
-          ButtonTheme(
-            minWidth: MediaQuery.of(context).size.width * 0.9,
-            height: 70.0,
-            child: RaisedButton(
-                color: const Color.fromRGBO(248, 187, 158, 1),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: ElevatedButton(
                 onPressed: () {},
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(248, 187, 158, 1)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: const BorderSide(
+                                color: Color.fromRGBO(248, 187, 158, 1))))),
                 child: const Text('Report Incident',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -69,12 +87,20 @@ class _PageListState extends State<PageList> {
                     ))),
           ),
           const SizedBox(height: 25.0),
-          ButtonTheme(
-            minWidth: MediaQuery.of(context).size.width * 0.9,
-            height: 70.0,
-            child: RaisedButton(
-                color: const Color.fromRGBO(248, 187, 158, 1),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: ElevatedButton(
                 onPressed: () {},
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(248, 187, 158, 1)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: const BorderSide(
+                                color: Color.fromRGBO(248, 187, 158, 1))))),
                 child: const Text('Support Services',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -82,12 +108,20 @@ class _PageListState extends State<PageList> {
                     ))),
           ),
           const SizedBox(height: 25.0),
-          ButtonTheme(
-            minWidth: MediaQuery.of(context).size.width * 0.9,
-            height: 70.0,
-            child: RaisedButton(
-                color: const Color.fromRGBO(248, 187, 158, 1),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: ElevatedButton(
                 onPressed: () {},
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(248, 187, 158, 1)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: const BorderSide(
+                                color: Color.fromRGBO(248, 187, 158, 1))))),
                 child: const Text('Quick Resources',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -95,12 +129,20 @@ class _PageListState extends State<PageList> {
                     ))),
           ),
           const SizedBox(height: 25.0),
-          ButtonTheme(
-            minWidth: MediaQuery.of(context).size.width * 0.9,
-            height: 70.0,
-            child: RaisedButton(
-                color: const Color.fromRGBO(248, 187, 158, 1),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: ElevatedButton(
                 onPressed: () {},
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromRGBO(248, 187, 158, 1)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: const BorderSide(
+                                color: Color.fromRGBO(248, 187, 158, 1))))),
                 child: const Text('Prevent Violences',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,

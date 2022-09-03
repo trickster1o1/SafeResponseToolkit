@@ -31,8 +31,12 @@ dependencies:
     sdk: flutter
   flutter_native_splash: ^2.2.8
   o_popup: ^1.0.1
+  flutter_launcher_icons: ^0.10.0
   flutter_phone_direct_caller: ^2.1.1
-
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
 flutter_native_splash:
   color: "#999999"
   image: assets/srt.png
@@ -69,6 +73,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/srt.png
+    - assets/logo.png
     - assets/bg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
