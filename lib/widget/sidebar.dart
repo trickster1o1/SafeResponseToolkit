@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 Widget CustomSideBar(width) {
   return Drawer(
-    width: width * 0.5,
+    width: width * 0.7,
     backgroundColor: const Color.fromRGBO(236, 32, 69, 1),
     child: ListView(
-      children: const [
-        Image(image: AssetImage('assets/srt.png')),
-        SizedBox(
+      children: [
+        const Image(image: AssetImage('assets/srt.png')),
+        const SizedBox(
           height: 15.0,
         ),
-        Divider(
+        const Divider(
           color: Color.fromRGBO(255, 150, 100, 0.8),
         ),
-        ListTile(
+        const ListTile(
           leading: Icon(
             Icons.padding_rounded,
             color: Colors.white,
@@ -27,92 +28,98 @@ Widget CustomSideBar(width) {
             ),
           ),
         ),
-        Divider(
+        const Divider(
           color: Color.fromRGBO(255, 150, 100, 0.8),
         ),
-        ListTile(
+        const ListTile(
           leading: Icon(
-            Icons.contact_support,
+            Icons.handshake_outlined,
             color: Colors.white,
           ),
           horizontalTitleGap: 0.0,
           title: Text(
-            'Immidiate Support',
+            'Sharing Your Story',
             style: TextStyle(
               color: Colors.white,
               fontSize: 20.0,
             ),
           ),
         ),
-        Divider(
+        const Divider(
           color: Color.fromRGBO(255, 150, 100, 0.8),
         ),
-        ListTile(
+        const ListTile(
           leading: Icon(
-            Icons.assistant_navigation,
+            Icons.volunteer_activism_outlined,
             color: Colors.white,
           ),
           horizontalTitleGap: 0.0,
           title: Text(
-            'Navigation',
+            'Activism and Advocacy',
             style: TextStyle(
               color: Colors.white,
               fontSize: 20.0,
             ),
           ),
         ),
-        Divider(
+        const Divider(
           color: Color.fromRGBO(255, 150, 100, 0.8),
         ),
-        ListTile(
+        const ListTile(
           leading: Icon(
-            Icons.design_services_outlined,
+            Icons.download,
             color: Colors.white,
           ),
           horizontalTitleGap: 0.0,
           title: Text(
-            'Support Services',
+            'Downloadable Community Resources.',
             style: TextStyle(
               color: Colors.white,
               fontSize: 20.0,
             ),
           ),
         ),
-        Divider(
+        const Divider(
           color: Color.fromRGBO(255, 150, 100, 0.8),
         ),
         ListTile(
+          leading: const Icon(
+            Icons.web_sharp,
+            color: Colors.white,
+          ),
+          horizontalTitleGap: 0.0,
+          title: InkWell(
+            child: const Text(
+              'The Safe Response Toolkit Website',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20.0,
+              ),
+            ),
+            onTap: () async {
+              await launchUrl(
+                  Uri.parse('https://www.saferesponsetoolkit.com.au'));
+            },
+          ),
+        ),
+        const Divider(
+          color: Color.fromRGBO(255, 150, 100, 0.8),
+        ),
+        const ListTile(
           leading: Icon(
-            Icons.emoji_objects_outlined,
+            Icons.back_hand_outlined,
             color: Colors.white,
           ),
           horizontalTitleGap: 0.0,
           title: Text(
-            'Resources',
+            'The STOP Campaign Website',
             style: TextStyle(
               color: Colors.white,
               fontSize: 20.0,
             ),
           ),
         ),
-        Divider(
-          color: Color.fromRGBO(255, 150, 100, 0.8),
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.contact_mail_outlined,
-            color: Colors.white,
-          ),
-          horizontalTitleGap: 0.0,
-          title: Text(
-            'Contact',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
-            ),
-          ),
-        ),
-        Divider(
+        const Divider(
           color: Color.fromRGBO(255, 150, 100, 0.8),
         ),
       ],

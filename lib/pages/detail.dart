@@ -65,47 +65,49 @@ class _PageDetailState extends State<PageDetail> {
                                   fontSize: w['title'] != null ? 25.0 : 0,
                                 ),
                               ),
-                              SizedBox(
-                                height: w['title'] != null ? 10.0 : 0,
-                              ),
+                              // SizedBox(
+                              //   height: w['title'] != null ? 10.0 : 0,
+                              // ),
                               Html(
                                 data: w['content'],
+                                style: {
+                                  'p': Style(
+                                    textAlign: TextAlign.justify,
+                                    padding: EdgeInsets.zero,
+                                    margin: EdgeInsets.zero,
+                                  ),
+                                  'h4': Style(
+                                    margin: EdgeInsets.zero,
+                                  ),
+                                },
                                 onLinkTap:
                                     (url, context, attrs, element) async {
                                   await launchUrl(Uri.parse(url!));
                                 },
                               ),
-                              const SizedBox(
-                                height: 10.0,
-                              ),
                               Column(
                                 children: w['lsts']
                                     .map<Widget>(
-                                      (l) => Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            0, 10, 9, 0),
-                                        child: SizedBox(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              1.0,
-                                          child: Row(
-                                            children: [
-                                              const Icon(
-                                                Icons.circle,
-                                                size: 10.0,
-                                              ),
-                                              const SizedBox(
-                                                width: 5.5,
-                                              ),
-                                              SizedBox(
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                      0.8,
-                                                  child: Text(l)),
-                                            ],
-                                          ),
+                                      (l) => SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                1.0,
+                                        child: Row(
+                                          children: [
+                                            const Icon(
+                                              Icons.circle,
+                                              size: 10.0,
+                                            ),
+                                            const SizedBox(
+                                              width: 5.5,
+                                            ),
+                                            SizedBox(
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.8,
+                                                child: Html(data: l)),
+                                          ],
                                         ),
                                       ),
                                     )
