@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safe_response_toolkit/globalFunction/global.dart';
+import 'package:safe_response_toolkit/pages/detail.dart';
 
 class PageList extends StatefulWidget {
   const PageList({Key? key}) : super(key: key);
@@ -45,7 +46,30 @@ class _PageListState extends State<PageList> {
             width: MediaQuery.of(context).size.width * 0.9,
             child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/response');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const PageDetail(title: 'Immediate Support', list: {
+                        'lists': [
+                          {
+                            'content':
+                                'Your first priority is to make sure you are safe. You have the right to always feel safe and to call the police if you are in danger. If you feel unsafe or would like immediate support, you can contact the police or someone you trust.',
+                            'lsts': []
+                          },
+                          {
+                            'content':
+                                'Your first priority is to make sure that you are safe. If you feel unsafe, you should contact the police or someone you trust in your family or community. You can also contact the Canberra Rape Crisis Centre (CRCC) Crisis Line for emergency referrals to support services.',
+                            'lsts': [
+                              'Emergency (police, ambulance, fire): Triple Zero (000) (24/7)',
+                              'ACT Policing: 131 444',
+                              'CRCC Crisis Line: (02) 6247 2525 (7am-11pm, 7 days a week)'
+                            ]
+                          }
+                        ]
+                      }),
+                    ),
+                  );
                 },
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all<EdgeInsets>(
@@ -58,7 +82,7 @@ class _PageListState extends State<PageList> {
                             side: const BorderSide(
                                 color: Color.fromRGBO(248, 187, 158, 1))))),
                 child: const Text(
-                  'Immediate Response',
+                  'Immediate Support',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30.0,
@@ -69,7 +93,15 @@ class _PageListState extends State<PageList> {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PageDetail(
+                          title: 'Report Incident', list: {'lists': []}),
+                    ),
+                  );
+                },
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all<EdgeInsets>(
                         const EdgeInsets.all(15)),
@@ -90,7 +122,15 @@ class _PageListState extends State<PageList> {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PageDetail(
+                          title: 'Support Services', list: {'lists': []}),
+                    ),
+                  );
+                },
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all<EdgeInsets>(
                         const EdgeInsets.all(15)),
@@ -111,7 +151,15 @@ class _PageListState extends State<PageList> {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PageDetail(
+                          title: 'Quick Resources', list: {'lists': []}),
+                    ),
+                  );
+                },
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all<EdgeInsets>(
                         const EdgeInsets.all(15)),
@@ -132,7 +180,15 @@ class _PageListState extends State<PageList> {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PageDetail(
+                          title: 'Prevent Violances', list: {'lists': []}),
+                    ),
+                  );
+                },
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all<EdgeInsets>(
                         const EdgeInsets.all(15)),
