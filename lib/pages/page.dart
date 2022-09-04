@@ -16,7 +16,7 @@ class _PageListState extends State<PageList> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: scaffoldKey,
-        drawer: CustomSideBar(MediaQuery.of(context).size.width),
+        drawer: CustomSideBar(MediaQuery.of(context).size.width, context),
         body: SafeArea(
           child: Container(
             decoration: GlobalBg(),

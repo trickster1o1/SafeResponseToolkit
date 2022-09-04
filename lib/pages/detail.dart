@@ -19,7 +19,7 @@ class _PageDetailState extends State<PageDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(context),
-      endDrawer: CustomSideBar(MediaQuery.of(context).size.width),
+      endDrawer: CustomSideBar(MediaQuery.of(context).size.width, context),
       body: SingleChildScrollView(
         child: Container(
           color: const Color.fromRGBO(231, 246, 255, 1),
@@ -76,7 +76,7 @@ class _PageDetailState extends State<PageDetail> {
                                     padding: EdgeInsets.zero,
                                     margin: EdgeInsets.zero,
                                   ),
-                                  'h4': Style(
+                                  'h4, h2': Style(
                                     margin: EdgeInsets.zero,
                                   ),
                                 },
