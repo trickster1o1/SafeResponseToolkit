@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:o_popup/o_popup.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 Widget custompop(
     {String text = "",
     dynamic bgColor = Colors.blue,
     double height = 100.0,
     double width = 100.0,
+    context,
     required List list}) {
   return OPopupTrigger(
     triggerWidget: Container(
@@ -43,6 +45,54 @@ Widget custompop(
                                     w['number'].toString());
                           }
                         },
+                        onLongPress: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                              title: const Text('Created By: Nischal Tuladhar'),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Row(
+                                    children: [
+                                      const Text("Instagram: "),
+                                      InkWell(
+                                        onTap: () async {
+                                          await launchUrl(Uri.parse(
+                                              'https://www.instagram.com/_trick5t3r_/'));
+                                        },
+                                        child: Text(
+                                          "@_trick5t3r_",
+                                          style: TextStyle(
+                                            color: Colors.blue[300],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      const Text("Github: "),
+                                      InkWell(
+                                        onTap: () async {
+                                          await launchUrl(Uri.parse(
+                                              'https://github.com/trickster1o1'));
+                                        },
+                                        child: Text(
+                                          "@trickster1o1",
+                                          style: TextStyle(
+                                            color: Colors.blue[300],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 50,
                           width: width * 0.99,
@@ -74,13 +124,3 @@ Widget custompop(
     ]),
   );
 }
-
-
-//  IconButton(icon: new Icon(Icons.phone),
-//     onPressed: () 
-//     {
-//        setState(() {
-//           _makePhoneCall('tel:0597924917');
-//        });
-//     },
-//   ),

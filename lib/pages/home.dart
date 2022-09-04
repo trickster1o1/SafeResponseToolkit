@@ -63,6 +63,7 @@ class _HomeState extends State<Home> {
                             bgColor: Colors.blue,
                             height: MediaQuery.of(context).size.height,
                             width: MediaQuery.of(context).size.width,
+                            context: context,
                             list: [
                               {
                                 'title': 'EMERGENCY CONTACTS',
